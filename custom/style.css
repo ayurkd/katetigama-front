@@ -1,0 +1,164 @@
+nav.navbar.navbar-default {
+    margin-bottom: 0px;
+}
+div#logo h2 {font-size: 16px;font-family: Georgia;line-height: 1.4;}
+#logo a {
+    display:  inline-block;
+    vertical-align: middle;
+}
+
+#logo img {
+    vertical-align: middle;
+    padding-right: 24px!important;
+    display: inline-block;
+}
+nav.navbar.navbar-default {
+    background-color: #1a2c44;
+    border: none;
+    border-radius: 0px;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    background-color: rgba(0, 0, 0, 0.21);
+    color: #fbcb2c
+}
+
+
+.active, .dot:hover {
+    background-color: #0000;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color:  white;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color: #fbbe32;
+    background-color: #1a2c44;
+}
+
+.dropdown-menu > li > a {
+    color: white;
+}
+
+.dropdown-menu {
+    color: #1a2c44;
+    background: #1a2c44;
+    background-color: #1a2c44;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: #fbcb2c;
+    background-color: #1a2c44;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #fbcb2c;
+}
+h6 {
+    font-size: 30px;
+}
+
+h1{
+    font-size:30 px;
+}
+
+div#projects h3 {
+    /* border-bottom: 1px solid; */
+    /* padding-bottom: 0px; */
+    margin-bottom: 0px;
+}
+
+div #projects p {
+    /* border-bottom: dashed lightsteelblue 1px; */
+    /* padding-bottom: 12px; */
+    padding-top: 12px;
+}
+
+div#projects span {
+    color: #a6a6a6;
+}
+
+.box-body {}
+
+div#projects a {
+    /* border-bottom: dashed 1px; */
+}
+
+div#projects strong {padding-bottom: 12px;display: block;padding-top: 12px;}
+
+div#projects div div {
+    /* border-bottom: solid #a6a6a6 1px; */
+}
+
+img {
+    /* width: 500px; */
+}
+
+div#articles img {
+    width: 150px;
+}
+
+div#scholarship img {
+    width: 150px;
+    padding-right: 10px;
+}
+
+div#articles div div ul li span img {}
+
+div#blog img {
+    width: 150px;
+}
+
+div#logo img {
+    width: auto;
+}
+
+div#article img {
+    width: 600px;
+    padding-bottom: 10px;
+}
+td, th {
+    padding: 8px;
+}
+
+div#scholarship li {
+    padding-bottom: 10px;
+    border-bottom: dashed 1px;
+}
+
+a.btn {
+    margin-top: 10px;
+}
+
+div#articles li {
+    border-bottom: dashed 1px;
+}
+
+li.user-footer {}
+
+button.btn.btn-default.btn-flat {
+    /* padding: inherit; */
+}
+
+div#logout.pull-right {
+    float: right!important;
+    /* margin: auto; */
+    /* margin-bottom: auto; */
+}
+
+.pull-left {
+    padding-top: 0px;
+}
+
+div#projects img {
+    width: 200px;
+}
+
+ul {}
+
+section#breadcrumb {}
+
+main.hoc.container.clear {}
+
+main.hoc.container.clear {
+    margin-bottom: -40px;
+    margin-top: -80px;
+}

@@ -1,0 +1,67 @@
+<html lang="en">
+  <head>
+    <title>Pencarian Autocomplete di Laravel Menggunakan Ajax</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+  </head>
+<body>
+   
+<div class="container">
+    <h1>Laravel 5.8 Autocomplete Search using Bootstrap Typeahead JS - ItSolutionStuff.com</h1>   
+    <input class="typeahead form-control" type="text">
+</div>
+
+<div class="container">
+  <h2>Pencarian Autocomplete di Laravel Menggunakan Ajax</h2>
+  <br/>
+  <select class="itemName form-control" style="width:500px" name="itemName"></select>
+  <!-- <select type="text" name="company" id="company" class="form-control" style="width: 100%" required>
+  </select> -->
+  <!-- <input type="text" hidden="" name="company_id" id="company_id"> -->
+  <!-- <select name="mySelect2" type="hidden" id="mySelect2" class="form-control" style="width: 100%"></select> -->
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<script type="text/javascript">
+  $( document ).ready( function() {
+
+  var path = "http://localhost:8000/api/v1/search_company";
+    $('input.typeahead').typeahead({
+        source:  function (query, process) {
+        return $.get(path, { query: query }, function (data) {
+                return process(data);
+            });
+        }
+    });
+
+  $(".js-example-data-ajax").select2({
+  ajax: {
+    url: "http://localhost:8000/api/v1/search_company",
+    dataType: 'json',
+    delay: 250,
+    data: function (params) {
+      return {
+        q: params.term, // search term
+        page: params.page
+      };
+    },
+    processResults: function (data, params) {
+
+      return {
+        results: data.items,
+        }
+      }
+    },
+    cache: true,
+  placeholder: 'Search for a repository',
+  minimumInputLength: 1,
+
+  });
+
+});
+
+</script>
+</body>
+</html>

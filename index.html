@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!--
+Template Name: Algenius
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html lang="">
+
+<head>
+  <title>KATETIGAMA</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#A8A7A6"/>
+  <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">  
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">  
+  <link rel="apple-touch-icon" href="images/hello-icon-152.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">  
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="apple-mobile-web-app-title" content="KATETIGAMA"> 
+  <meta name="msapplication-TileImage" content="images/hello-icon-144.png">  
+  <meta name="msapplication-TileColor" content="#A8A7A6">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"> </script>
+</head>
+
+<body id="top">
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+
+  <!-- ######################
+
+
+    ########################################################################## -->
+        <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h2> <img src="images/logo_gmu.png"> <a href="index.html">Alumni Teknik Elektro dan Teknologi Informasi <br> Universitas Gadjah Mada</a></h2>
+      </div>
+      <!-- ################################################################################################ -->
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+<nav class="navbar navbar-default">
+  <div class="hoc">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">KATETIGAMA <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="pages/sekilas-katetigama.html">Sekilas KATETIGAMA</a></li>
+            <li><a href="pages/sambutan-katetigama.html">Sambutan Ketua KATETIGAMA</a></li>
+            <li><a href="pages/struktur-katetigama.html">Struktur KATETIGAMA</a></li>
+          </ul>
+        </li>
+        <li class><a href="pages/database-alumni.html">Database Alumni</a>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="pages/login.html">Login</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');">
+    <article id="pageintro" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <h3 class="heading">Keluarga Teknik Elektro dan Teknologi Informasi</h3>
+      <p>Elit in tempor arcu vitae leo sollicitudin luctus odio porttitor donec velit ante dictum quis justo.</p>
+      <footer><a class="btn" href="#">Tellus et egestas</a></footer>
+      <!-- ################################################################################################ -->
+    </article>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row3">
+    <section class="hoc container clear">
+      <!-- ################################################################################################ -->
+      <!--<div class="sectiontitle">
+      <h6 class="heading">Velit fringilla tincidunt</h6>
+    </div>-->
+      <div class="group testimonials">
+        <div id="articles" class="one_third first">
+          <div class="sectiontitle">
+            <h6 class="heading">Lowongan Kerja</h6>
+          </div>
+          <div v-for="item in items.article.slice(0,5)">
+          <ul class="nospace linklist">
+            <li><span><img v-bind:src=" 'http://localhost:8000/img/blog/' + item.featured_image"><a v-bind:href="'pages/detail-artikel.html?id='+item.id">{{item.name}}</a></span></li>
+          </ul>
+        </div>
+        <footer style="text-align: right"><a class="btn" href="pages/list-lowongan.html">Selengkapnya &rsaquo;</a></footer>
+        </div>
+        <div id="blog" class="one_third">
+          <div class="sectiontitle">
+            <h6 class="heading">Beasiswa</h6>
+          </div>
+          <div v-for="item in items.article.slice(0,5)">
+          <ul class="nospace linklist">
+            <li><span><img v-bind:src=" 'http://localhost:8000/img/blog/' + item.featured_image"><a v-bind:href="'pages/detail-artikel.html?id='+item.id">{{item.name}}</a></span></li>
+          </ul>
+        </div>
+          <footer style="text-align: right"><a class="btn" href="pages/list-agenda.html">Selengkapnya &rsaquo;</a></footer>
+        </div>
+        <div id="scholarship" class="one_third">
+          <div class="sectiontitle">
+            <h6 class="heading">Agenda</h6>
+          </div>
+          <div v-for="item in items.article.slice(0,5)">
+          <ul class="nospace linklist">
+            <li><span><img v-bind:src=" 'http://localhost:8000/img/blog/' + item.featured_image"><a v-bind:href="'pages/detail-artikel.html?id='+item.id">{{item.name}}</a></span></li>
+          </ul>
+          </div>
+          <footer style="text-align: right"><a class="btn" href="pages/list-beasiswa.html">Selengkapnya &rsaquo;</a></footer>
+        </div>
+      </div>
+      <!-- ################################################################################################ -->
+    </section>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row4">
+    <footer id="footer" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <div>
+        <p>Sekretariat Alumni Teknik Elektro dan Teknologi Informasi</p>
+        <p>Jl. Grafika No. 2 Kampus UGM Yogyakarta 55281</p>
+        <p>Email : katetigama@ugm.ac.id</p>
+        <p></p>
+      </div>
+      <!-- ################################################################################################ -->
+    </footer>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row5">
+    <div id="copyright" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <p class="fl_left">Copyright K &copy; 2019 - All Rights Reserved - <a href="#">KATETIGAMA</a></p>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+  <!-- JAVASCRIPTS -->
+  <!-- development version, includes helpful console warnings -->
+  <script src="layout/scripts/jquery.min.js"></script>
+  <script src="layout/scripts/jquery.backtotop.js"></script>
+  <script src="layout/scripts/jquery.mobilemenu.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css"></link>
+  <script src="js/main.js"></script>
+    <link href="custom/style.css" rel="stylesheet" type="text/css" media="all">
+<!-- DataTables -->
+<script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script>
+  var vueModel=new Vue({
+    el:'#articles',
+    data:{
+      items:{
+        article: []
+      }
+    },
+
+  methods:{
+      tampilkanProyek:function(){
+        var that = this
+        $.get("http://localhost:8000/api/v1/category/1")
+          .done(function(data){
+            that.items.article = data.article
+          });
+    } 
+
+  },
+  mounted : function () {
+    this.tampilkanProyek();
+  }
+})  </script>
+<script>
+  var app =new Vue({
+    el:'#scholarship',
+    data:{
+      items:{
+        article: []
+      }
+    },
+
+  methods:{
+      tampilkanProyek:function(){
+        var that = this
+        $.get("http://localhost:8000/api/v1/category/2")
+          .done(function(data){
+            that.items.article = data.article
+          });
+    } 
+
+  },
+  mounted : function () {
+    this.tampilkanProyek();
+  }
+})
+</script>
+<script>
+  var app =new Vue({
+    el:'#blog',
+    data:{
+      items:{
+        article: []
+      }
+    },
+
+  methods:{
+      tampilkanProyek:function(){
+        var that = this
+        $.get("http://localhost:8000/api/v1/category/3")
+          .done(function(data){
+            that.items.article = data.article
+          });
+    } 
+
+  },
+  mounted : function () {
+    this.tampilkanProyek();
+  }
+})
+</script>
+
+</body>
+
+</html>

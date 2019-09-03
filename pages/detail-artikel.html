@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!--
+Template Name: Algenius
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html lang="">
+<head>
+<title>Lowongan Pekerjaan</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"> </script>
+</head>
+<body id="top">
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h2> <img src="../images/logo_gmu.png"> <a href="index.html">Alumni Teknik Elektro dan Teknologi Informasi <br> Universitas Gadjah Mada</a></h2>
+      </div>
+      <!-- ################################################################################################ -->
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+<nav class="navbar navbar-default">
+  <div class="hoc">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
+        <li class="dropdown">
+          <a  class="active" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">KATETIGAMA <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="sekilas-katetigama.html">Sekilas KATETIGAMA</a></li>
+            <li><a href="sambutan-katetigama.html">Sambutan Ketua KATETIGAMA</a></li>
+            <li><a href="struktur-katetigama.html">Struktur KATETIGAMA</a></li>
+          </ul>
+        </li>
+        <li class><a href="database-alumni.html">Database Alumni</a>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper bgded overlay" style="background-image:url('../images/demo/backgrounds/01.png');">
+  <section id="breadcrumb" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <ul>
+      <li><a href="#">Beranda</a></li>
+      <li><a href="#">Profil</a></li>
+    </ul>
+    <!-- ################################################################################################ --> 
+  </section>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body --> 
+    <!-- ################################################################################################ -->
+    <div id="article" class="content three_quarter first">
+      <h1>{{article.name}}</h1>
+      <div>
+        <b>Tanggal </b>: <span>{{article.created_at}}</span>
+      </div>
+
+      <img v-bind:src=" 'http://localhost:8000/img/blog/' + article.featured_image">
+      <article v-html="article.content"></article>
+      <!-- ################################################################################################ --> 
+    </div>
+    <!-- ################################################################################################ --> 
+    <!-- ################################################################################################ -->
+      <!-- ################################################################################################ -->
+      <div id="list" class="sidebar one_quarter"> 
+      <!-- ################################################################################################ -->
+      <h6>Berita</h6>
+      <nav class="sdb_holder" v-for="item in items.articles.data">
+        <ul>
+          <li><a href="#">{{item.name}}</a></li>
+        </ul>
+      </nav>
+    <!-- ################################################################################################ --> 
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row4">
+    <footer id="footer" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <div>
+        <p>Sekretariat Alumni Teknik Elektro dan Teknologi Informasi</p>
+        <p>Jl. Grafika No. 2 Kampus UGM Yogyakarta 55281</p>
+        <p>Email : katetigama@ugm.ac.id</p>
+        <p></p>
+      </div>
+      <!-- ################################################################################################ -->
+    </footer>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row5">
+    <div id="copyright" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <p class="fl_left">Copyright K &copy; 2019 - All Rights Reserved - <a href="#">KATETIGAMA</a></p>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>    
+<!-- JAVASCRIPTS --> 
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css"></link>
+    <link href="../custom/style.css" rel="stylesheet" type="text/css" media="all">
+<script>
+  var vueModel=new Vue({
+    el:'#article',
+    data:{
+      article:{
+        name:null,
+        content:null,
+        created_at:null,
+      }
+    },
+    mounted:function () {
+      var that=this
+      var id = getAllUrlParams().id;
+      $.get(`http://localhost:8000/api/v1/article/${id}`)
+      .done(function(data){
+        that.article = data.article
+      });
+    }
+  })
+
+  var vueModel2=new Vue({
+    el:'#list',
+    data:{
+      items:{
+        articles:{
+          data:[]
+        }
+      }
+    },
+
+  methods:{
+      tampilkanProyek:function(){
+        var that = this
+        $.get("http://localhost:8000/api/v1/article")
+      .done(function(data){
+        that.items = data
+      });
+    } 
+
+  },
+  mounted : function () {
+    this.tampilkanProyek();
+  }
+});
+
+  function getAllUrlParams(url) {
+
+  // get query string from url (optional) or window
+  var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+
+  // we'll store the parameters here
+  var obj = {};
+
+  // if query string exists
+  if (queryString) {
+
+    // stuff after # is not part of query string, so get rid of it
+    queryString = queryString.split('#')[0];
+
+    // split our query string into its component parts
+    var arr = queryString.split('&');
+
+    for (var i = 0; i < arr.length; i++) {
+      // separate the keys and the values
+      var a = arr[i].split('=');
+
+      // set parameter name and value (use 'true' if empty)
+      var paramName = a[0];
+      var paramValue = typeof (a[1]) === 'undefined' ? true : a[1];
+
+      // (optional) keep case consistent
+      paramName = paramName.toLowerCase();
+      if (typeof paramValue === 'string') paramValue = paramValue.toLowerCase();
+
+      // if the paramName ends with square brackets, e.g. colors[] or colors[2]
+      if (paramName.match(/\[(\d+)?\]$/)) {
+
+        // create key if it doesn't exist
+        var key = paramName.replace(/\[(\d+)?\]/, '');
+        if (!obj[key]) obj[key] = [];
+
+        // if it's an indexed array e.g. colors[2]
+        if (paramName.match(/\[\d+\]$/)) {
+          // get the index value and add the entry at the appropriate position
+          var index = /\[(\d+)\]/.exec(paramName)[1];
+          obj[key][index] = paramValue;
+        } else {
+          // otherwise add the value to the end of the array
+          obj[key].push(paramValue);
+        }
+      } else {
+        // we're dealing with a string
+        if (!obj[paramName]) {
+          // if it doesn't exist, create property
+          obj[paramName] = paramValue;
+        } else if (obj[paramName] && typeof obj[paramName] === 'string'){
+          // if property does exist and it's a string, convert it to an array
+          obj[paramName] = [obj[paramName]];
+          obj[paramName].push(paramValue);
+        } else {
+          // otherwise add the property
+          obj[paramName].push(paramValue);
+        }
+      }
+    }
+  }
+
+  return obj;
+}
+
+
+
+
+  </script>
+</body>
+</html>

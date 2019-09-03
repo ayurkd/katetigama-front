@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--
+Template Name: Algenius
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html lang="">
+
+<head>
+  <title>Database Alumni</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <script src="../vue/vue.js"></script>
+</head>
+
+<body id="top">
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h2> <img src="../images/logo_gmu.png"> <a href="index.html">Alumni Teknik Elektro dan Teknologi Informasi <br> Universitas Gadjah Mada</a></h2>
+      </div>
+      <!-- ################################################################################################ -->
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+<nav class="navbar navbar-default">
+  <div class="hoc">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
+        <li class="dropdown">
+          <a  class="active" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">KATETIGAMA <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="sekilas-katetigama.html">Sekilas KATETIGAMA</a></li>
+            <li><a href="sambutan-katetigama.html">Sambutan Ketua KATETIGAMA</a></li>
+            <li><a href="struktur-katetigama.html">Struktur KATETIGAMA</a></li>
+          </ul>
+        </li>
+        <li class><a href="database-alumni.html">Database Alumni</a>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper bgded overlay" style="background-image:url('../images/demo/backgrounds/01.png');">
+    <section id="breadcrumb" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#">Alumni</a></li>
+      </ul>
+      <!-- ################################################################################################ -->
+    </section>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row3">
+    <main class="hoc container clear">
+      <!-- main body -->
+      <!-- ################################################################################################ -->
+            <table id="alumni" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Nama Lengkap</th>
+                  <th>Angkatan</th>
+                  <th>Program Studi</th>
+                  <th>Konsentrasi</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>{{alumni.full_name}}</td>
+                  <td>{{alumni.batch}}</td>
+                  <td>{{alumni.prodi}}</td>
+                  <td>{{alumni.concentration}}
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Nama Lengkap</th>
+                  <th>Angkatan</th>
+                  <th>Program Studi</th>
+                  <th>Konsentrasi</th>
+                </tr>
+                </tfoot>
+              </table>
+            </main>
+          </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row4">
+    <footer id="footer" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <div>
+        <p>Sekretariat Alumni Teknik Elektro dan Teknologi Informasi</p>
+        <p>Jl. Grafika No. 2 Kampus UGM Yogyakarta 55281</p>
+        <p>Email : katetigama@ugm.ac.id</p>
+        <p></p>
+      </div>
+      <!-- ################################################################################################ -->
+    </footer>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row5">
+    <div id="copyright" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <p class="fl_left">Copyright K &copy; 2019 - All Rights Reserved - <a href="#">KATETIGAMA</a></p>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>    
+  <!-- JAVASCRIPTS -->
+  <script src="../layout/scripts/jquery.min.js"></script>
+  <script src="../layout/scripts/jquery.backtotop.js"></script>
+  <script src="../layout/scripts/jquery.mobilemenu.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css"></link>
+  <script src="../js/main.js"></script>
+    <link href="../custom/style.css" rel="stylesheet" type="text/css" media="all">
+<!-- DataTables -->
+<script src="../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- page script -->
+<script>
+  $(function () {
+    $('#alumni').DataTable({
+      columns:[
+      {data:'full_name'},
+      {data:'batch'},
+      {data:'prodi'},
+      {data:'concentration'}
+      ],
+      processing:true,
+      serverSide:false,
+      "ajax": {url:"http://localhost:8000/api/v1/alumni",dataSrc:"alumnis"},
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : true,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    });
+  });
+</script>
+
+</body>
+</html>
