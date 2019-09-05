@@ -266,7 +266,7 @@ label span{color:#FF0000; background-color:#A8A7A6;}
 input:focus, textarea:focus, *:required:focus{border-color:#562351;}
 
 .overlay{color:#FFFFFF; background-color:inherit;}
-.overlay::after{color:inherit; background-color:#A8A7A6;}
+.overlay::after{color:inherit; background-color:transparent;}
 .overlay.light{color:#474747;}
 .overlay.light::after{background-color:rgba(255,255,255,.8);}
 .overlay.coloured::after{}
