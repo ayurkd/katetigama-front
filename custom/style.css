@@ -74,15 +74,27 @@ div #projects p {
 
 div#projects span {
     color: #a6a6a6;
+    padding-right:20px;
+}
+
+div#proyek span {
+    color: #a6a6a6;
+    padding-right:20px;
+}
+
+div#proyek img{
+    width:500px;
+}
 }
 
 .box-body {}
 
-div#projects a {
+div#projects button {
+    margin-left:5px;
     /* border-bottom: dashed 1px; */
 }
 
-div#projects strong {padding-bottom: 12px;display: block;padding-top: 12px;}
+div#projects strong {padding-bottom: 12px;display: block;}
 
 div#projects div div {
     /* border-bottom: solid #a6a6a6 1px; */
@@ -150,6 +162,7 @@ div#logout.pull-right {
 
 div#projects img {
     width: 200px;
+    object-fit: cover;
 }
 
 ul {}

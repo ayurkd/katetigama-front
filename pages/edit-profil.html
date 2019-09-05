@@ -103,12 +103,13 @@
     <!-- sidebar: style can be found in sidebar.less -->
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree">
+      <section class="sidebar">
+       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li>
-          <a href="list-proyek.html">
+          <a href="#">
             <i class="fa fa-files-o"></i>
-            <span>Info Proyek</span>
+            <span>Info Tawaran Proyek</span>
             <span class="pull-right-container">
               <span class="label label-primary pull-right"></span>
             </span>
@@ -117,7 +118,7 @@
         <li>
           <a href="buat-proyek.html">
             <i class="fa fa-calendar"></i> 
-            <span>Buat Proyek</span>
+            <span>Buat Tawaran Proyek</span>
             <span class="pull-right-container">
               <small class="label label-primary pull-right"></small>
             </span>
@@ -127,7 +128,13 @@
           <a href="cari-alumni.html">
             <i class="fa fa-th"></i> <span>Cari Alumni</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="info-alumni.html">
+            <i class="fa fa-envelope"></i> <span>Info Alumni</span>
+            <span class="pull-right-container">
             </span>
           </a>
         </li>
@@ -202,7 +209,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" class="form-control pull-right" id="datepicker2"  v-model="inputan.date_of_birth">
+                  <input id="datepicker" type="text" class="form-control pull-right"  v-model="inputan.date_of_birth" onchange="vueModel.getValue()">
                 </div>
                 </div>
                 <div class="form-group">
@@ -532,7 +539,7 @@
     )
 
     //Date picker
-    $('#datepicker').datepicker({
+    $('#datepicker').datepicker({format:'yyyy-mm-dd',
       autoclose: true
     })
   })
@@ -568,6 +575,9 @@
                 }
             },
             methods: {
+                getValue:function(){
+                    this.inputan.date_of_birth=$("#datepicker").val()
+                  },
                 dapatkanProyek: function() {
                     var that=this;
                     var id = getAllUrlParams().id;

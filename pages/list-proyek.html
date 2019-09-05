@@ -187,10 +187,10 @@
   </aside>
 
   <div class="content-wrapper">
-    <section class="content">
-      <div class="info">
+    <section class="content-header">
         <h1>Info Tawaran Proyek</h1>
-      </div>
+    </section>
+    <section class="content">
       <div class="row">
         <div class="col-md-12">
           <!-- Custom Tabs -->
@@ -204,6 +204,7 @@
                   <h3><a v-bind:href="'detail-proyek.html?id='+item.id">{{item.title}}</a> <span class="pull-right badge bg-blue">{{item.status}}</span></h3>
                   <span><b class="fa fa-clock-o"></b> Batas Pendaftaran : {{fecha.format(new Date(item.end_date), 'dddd, D MMMM YYYY')}} </span>
                   <span><b class="fa fa-location-arrow"></b> {{item.location}}</span>
+                  <span><b class="fa fa-bookmark"></b> Kategori : {{item.work_field}}</b></span>
                   <p>{{item.description}}</p>
                 </td>
               </table>

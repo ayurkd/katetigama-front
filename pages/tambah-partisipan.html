@@ -19,11 +19,11 @@
     <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
     <!-- DataTables -->
     <link rel="stylesheet" href="../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" href="../plugins/iCheck/all.css">
+    <!-- <link rel="stylesheet" href="../plugins/iCheck/all.css"> -->
     <!-- Bootstrap Color Picker -->
     <link rel="stylesheet" href="../bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
     <!-- Bootstrap time Picker -->
-    <link rel="stylesheet" href="../plugins/timepicker/bootstrap-timepicker.min.css">
+    <!-- <link rel="stylesheet" href="../plugins/timepicker/bootstrap-timepicker.min.css"> -->
     <!-- Select2 -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <!-- Theme style -->
@@ -92,7 +92,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="../dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                                    <!-- <img src="../dist/img/user3-128x128.jpg" class="img-circle" alt="User Image"> -->
                                                 </div>
                                                 <h4>
                         AdminLTE Design Team
@@ -104,7 +104,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="../dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                                    <!-- <img src="../dist/img/user4-128x128.jpg" class="img-circle" alt="User Image"> -->
                                                 </div>
                                                 <h4>
                         Developers
@@ -116,7 +116,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="../dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                                    <!-- <img src="../dist/img/user3-128x128.jpg" class="img-circle" alt="User Image"> -->
                                                 </div>
                                                 <h4>
                         Sales Department
@@ -128,7 +128,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="../dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                                    <!-- <img src="../dist/img/user4-128x128.jpg" class="img-circle" alt="User Image"> -->
                                                 </div>
                                                 <h4>
                         Reviewers
@@ -366,19 +366,47 @@
                             </div>
                             <!-- /.box-header -->
                             <!-- form start -->
+                            
+
                             <form role="form" id="proyek">
                                 <div class="box-body">
-                                    <div class="field_wrapper">
-                                        <label for="exampleInputEmail1">Nama Proyek</label>
-                                        <select class="itemName form-control" style="width: 100%;" name="itemName" id="alumni" v-model="inputan.alumni_id" onchange="vueModel.getValue()"></select>
+                                    <!-- search alumni -->
+                                    <label> Masukkan alumni yang terlibat </label>
+                                      <div id="fields">
+                                        <div class="controls"> 
+                                            <div id="field1" class="form-group" style="margin-bottom: 5px">
+                                                <select class="select2 form-control" style="width: 50%;" name="alumni[]" id="alumni1" v-model="inputan.alumni_id" onchange="vueModel.getValue()"></select>
+                                                <button id="add1" onclick="addField()" class="btn btn-info add-more" type="button" style="">+</button>
+                                                <button id="remove1" class="btn btn-danger remove-me" type="button" style="display: none;">-</button><br>
+                                            </div>
+                                        </div>
+                                        <small>Tekan + untuk menambahkan kolom :)</small>
+                                      </div>
+                                    <!-- <div class="box-body table-responsive">
+                                        <label for="alumni">Cari Alumni yang terlibat</label>
+                                                <tr class="field1">
+                                                    <td>
+                                                        <select class="itemName form-control" style="width: 100%;" name="itemName" id="alumni" v-model="inputan.alumni_id" onchange="vueModel.getValue()"></select>
+                                                    </td>
+                                                    <td>
+                                                        <button id="add1" onclick="addField()" class="btn btn-info add-more" type="button" style="">+</button>
+                                                        <button id="remove1" class="btn btn-danger remove-me" type="button" style="display: none;">-</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table> -->
+                                        
+                                        
                                     </div>
 
                                     <div class="box-footer">
                                         <button type="button" class="btn btn-primary" v-on:click="editProyek()">Submit</button>
-                                        <a href="javascript:void(0);" class="add_button" title="Add field">Tambah</a>
+                                        <!-- <a href="javascript:void(0);" class="add_button" title="Add field">Tambah</a> -->
                                     </div>
                                 </div>
                             </form>
+                        
+
                         </div>
                     </div>
                 </div>
@@ -593,9 +621,9 @@
     <!-- Select2 -->
     <script src="../bower_components/select2/dist/js/select2.full.min.js"></script>
     <!-- InputMask -->
-    <script src="../plugins/input-mask/jquery.inputmask.js"></script>
+    <!-- <script src="../plugins/input-mask/jquery.inputmask.js"></script>
     <script src="../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-    <script src="../plugins/input-mask/jquery.inputmask.extensions.js"></script>
+    <script src="../plugins/input-mask/jquery.inputmask.extensions.js"></script> -->
     <!-- date-range-picker -->
     <script src="../bower_components/moment/min/moment.min.js"></script>
     <script src="../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
@@ -604,11 +632,11 @@
     <!-- bootstrap color picker -->
     <script src="../bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
     <!-- bootstrap time picker -->
-    <script src="../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <!-- <script src="../plugins/timepicker/bootstrap-timepicker.min.js"></script> -->
     <!-- SlimScroll -->
     <script src="../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
     <!-- iCheck 1.0.1 -->
-    <script src="../plugins/iCheck/icheck.min.js"></script>
+    <!-- <script src="../plugins/iCheck/icheck.min.js"></script> -->
     <!-- FastClick -->
     <script src="../bower_components/fastclick/lib/fastclick.js"></script>
     <!-- AdminLTE App -->
@@ -624,15 +652,15 @@
             $('.select2').select2()
 
             //Datemask dd/mm/yyyy
-            $('#datemask').inputmask('dd/mm/yyyy', {
-                    'placeholder': 'dd/mm/yyyy'
-                })
+            // $('#datemask').inputmask('dd/mm/yyyy', {
+            //         'placeholder': 'dd/mm/yyyy'
+            //     })
                 //Datemask2 mm/dd/yyyy
-            $('#datemask2').inputmask('mm/dd/yyyy', {
-                    'placeholder': 'mm/dd/yyyy'
-                })
+            // $('#datemask2').inputmask('mm/dd/yyyy', {
+            //         'placeholder': 'mm/dd/yyyy'
+            //     })
                 //Money Euro
-            $('[data-mask]').inputmask()
+            // $('[data-mask]').inputmask()
 
             //Date range picker
             $('#reservation').daterangepicker()
@@ -674,12 +702,12 @@
             el: "#proyek",
             data: {
                 inputan: {
-                    alumni_id: null,
+                    alumni_id: [],
                 }
             },
             methods: {
                 getValue:function(){
-                    this.inputan.alumni_id=$("#alumni").val()
+                    this.inputan.alumni_id=$("#alumni1").val()
                 },
                 editProyek:function(){
                   inputan=this.inputan;
@@ -700,9 +728,9 @@
                 })
             }
           },
-            // mounted:function() {
-            //   this.editProyek()
-            // }
+            mounted:function() {
+              this.getValue()
+            }
         });
 
         function getAllUrlParams(url) {
@@ -771,38 +799,6 @@
         }
     </script>
     <script>
-    $( document ).ready( function() {
-        $('#alumni').select2({
-            placeholder: 'Cari...',
-            ajax: {
-              url: 'http://localhost:8000/api/v1/search_alumni',
-              dataType: 'json',
-              delay: 150,
-              data: function(params) {
-                return {
-                  alumni: params.term
-                }
-              },
-              processResults: function (data) {
-                return {
-                  results:  $.map(data, function (item) {
-                    return {
-                      text: item.full_name,
-                      id: item.id
-                    }
-                  })
-                };
-              },
-              cache: true
-            }
-          });
-               $('#alumni').change(function() {
-          var result = $('#alumni').val();
-          console.log(result);
-        });
-    })
-      </script>
-    <script>
 token=localStorage.getItem('access_token')
 axios.defaults.baseURL= 'http://localhost:8000/api/v1'
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
@@ -860,29 +856,89 @@ var vueModel1=new Vue({
 });
 </script>
 <script>
-$(document).ready(function(){
-    var maxField = 10; //Input fields increment limitation
-    var addButton = $('.add_button'); //Add button selector
-    var wrapper = $('.field_wrapper'); //Input field wrapper
-    var fieldHTML = '<form role="form" id="proyek"><div class="field_wrapper"><select class="itemName form-control" style="width: 100%;" name="itemName" id="alumni" v-model="inputan.alumni_id" onchange="vueModel.getValue()"></select></div>'; //New input field html 
-    var x = 1; //Initial field counter is 1
-    
-    //Once add button is clicked
-    $(addButton).click(function(){
-        //Check maximum number of input fields
-        if(x < maxField){ 
-            x++; //Increment field counter
-            $(wrapper).append(fieldHTML); //Add field html
-        }
+    $(document).ready(function(){
+        getAlumni($('#alumni1'));
     });
+    function getAlumni(objectElement)  {
+        objectElement.select2({
+          placeholder: 'Pilih Alumni',
+          ajax: {
+            url: "http://localhost:8000/api/v1/search_alumni",
+            dataType: "json",
+            delay: 150,
+            data: function(params){
+              return{
+                alumni: params.term
+              };
+            },
+            processResults: function (data) {
+                return {
+                  results:  $.map(data, function (item) {
+                    return {
+                      text: item.full_name,
+                      id: item.id
+                    }
+                  })
+                };
+            },
+            cache: true,
+          },
+            minimumInputLength: 1,
+        });
+    }
+
+    //dynamic form
+     var next = 1;
+      function addField() {
+            var addto = "#field" + next;
+            var addRemove = "#field" + (next);
+            next = next + 1;
+            var newIn = '<div id="field'+next+'" class="form-group" style="margin-bottom: 5px"><select class="select2 form-control" style="width: 50%; display: inline-block; margin-right: 3px;" name="alumni[]" id="alumni'+next+'" v-model="inputan.alumni_id'+'" onchange="vueModel.getValue()"></select><button id="add'+next+'" onclick="addField()" class="btn btn-info add-more" type="button" style="">+</button><button id="remove'+next+'" class="btn btn-danger remove-me" type="button" style="display: none;">-</button><br></div>';
+            var newInput = $(newIn);
+            var removeBtn = '<br id="br'+ next +'">';
+            var removeButton = $(removeBtn);
+            $(addto).after(newInput);
+            //$(addRemove).after(removeButton);
+            $('#add'+ (next-1) +'').attr('style', "display: none");
+            $('#remove'+ (next-1) +'').attr('style', "display: inline");
+
+            getAlumni($('#alumni' + next));   
+            
+            $('.remove-me').click(function(e){
+                e.preventDefault();
+                var fieldNum = this.id.charAt(this.id.length-1);
+                var fieldID = "#field" + fieldNum;
+                var brID = "#br" + fieldNum;
+                //$(this).remove();
+                $(fieldID).remove();
+                //$(brID).remove();
+            });
+      }
+
+
+// $(document).ready(function(){
+//     var maxField = 10; //Input fields increment limitation
+//     var addButton = $('.add_button'); //Add button selector
+//     var wrapper = $('.field_wrapper'); //Input field wrapper
+//     var fieldHTML = '<tr class="field_wrapper"><td><select class="itemName form-control" style="width: 100%;" name="itemName" id="alumni" v-model="inputan.alumni_id" onchange="vueModel.getValue()"></select></td><td><a href="javascript:void(0);" class="btn btn-info add_button" type="button" style="">+</a><button id="remove1" class="btn btn-danger remove-me" type="button" >-</button></td></tr>'; //New input field html 
+//     var x = 1; //Initial field counter is 1
+    
+//     //Once add button is clicked
+//     $(addButton).click(function(){
+//         //Check maximum number of input fields
+//         if(x < maxField){ 
+//             x++; //Increment field counter
+//             $(wrapper).append(fieldHTML); //Add field html
+//         }
+//     });
     
     //Once remove button is clicked
-    $(wrapper).on('click', '.remove_button', function(e){
-        e.preventDefault();
-        $(this).parent('div').remove(); //Remove field html
-        x--; //Decrement field counter
-    });
-});
+    //$(wrapper).on('click', '.remove_button', function(e){
+        //e.preventDefault();
+        //$(this).parent('div').remove(); //Remove field html
+        //x--; //Decrement field counter
+    //});
+// });
     </script>
 </body>
 
