@@ -111,9 +111,6 @@
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -211,7 +208,7 @@
 
               <h3 class="profile-username text-center">{{alumni.full_name}}</h3>
               
-              <p class="text-muted text-center">{{alumni.job_detail.position}}</p>
+              <p class="text-muted text-center">{{alumni.job_detail.position}} at {{alumni.job_detail.company}}</p>
               <p class="text-center"> <span><button><a v-bind:href="'edit-profil.html?id='+alumni.id">Edit Profil</a> </button> <button><a href="ubah-password.html">Ubah Password</a></button></span></p>
 
               <ul class="list-group list-group-unbordered">
@@ -246,7 +243,7 @@
                 <h3> Proyek</h3>
                   <div v-for="(item, index) in items.project">
                       <button  class="pull-right"><a v-on:click="deleteProyek(item.id, index)">Hapus </a></button>
-                     <button class="pull-right"><a v-bind:href="'tambah-partisipan.html?id='+item.id">Edit </a></button>
+                     <button class="pull-right"><a v-bind:href="'edit-proyek.html?id='+item.id">Edit </a></button>
                       <strong href="#">{{item.title}}</strong>
                     <article>{{item.description}}</article>
                     <hr>
