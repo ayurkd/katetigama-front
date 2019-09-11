@@ -368,7 +368,7 @@
           wadah.append("end_date", this.inputan.end_date);
           token=localStorage.getItem('access_token');
           $.ajax({
-            url: 'http://localhost:8000/api/v1/project',
+            url: 'http://backend.katetigama.xyz/api/v1/project',
             beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Bearer " +token);
             },
@@ -385,7 +385,7 @@
     });
   //        {headers:
   //         {'Content-Type':'application/json', 'Authorization': 'bearer ' + token}}
-  //       $.post("http://localhost:8000/api/v1/project", this.inputan)
+  //       $.post("http://backend.katetigama.xyz/api/v1/project", this.inputan)
   //     .done(function(data){
   //       alert("Data Loaded:"+data);
   //     })
@@ -396,7 +396,7 @@
 </script>
 <script>
 token=localStorage.getItem('access_token')
-axios.defaults.baseURL= 'http://localhost:8000/api/v1'
+axios.defaults.baseURL= 'http://backend.katetigama.xyz/api/v1'
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
 
 var vueModel1=new Vue({
@@ -415,7 +415,7 @@ var vueModel1=new Vue({
       token=localStorage.getItem('access_token');
          $.ajax({
             type: 'GET',
-            url: "http://localhost:8000/api/v1/get-details",
+            url: "http://backend.katetigama.xyz/api/v1/get-details",
             beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Bearer " +token);
             },

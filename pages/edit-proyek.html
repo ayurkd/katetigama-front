@@ -727,7 +727,7 @@
                     var id = getAllUrlParams().id;
                     token = localStorage.getItem('access_token')
                     $.ajax({
-                        url: `http://localhost:8000/api/v1/project/${id}`,
+                        url: `http://backend.katetigama.xyz/api/v1/project/${id}`,
                         beforeSend: function(xhr) {
                             xhr.setRequestHeader("Authorization", "Bearer " + token);
                         },
@@ -743,7 +743,7 @@
                   var id=getAllUrlParams().id;
                   token=localStorage.getItem('access_token')
                   $.ajax({
-                  url: `http://localhost:8000/api/v1/project/${id}`,
+                  url: `http://backend.katetigama.xyz/api/v1/project/${id}`,
                   beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", "Bearer " +token);
                   },
@@ -828,7 +828,7 @@
     </script>
     <script>
 token=localStorage.getItem('access_token')
-axios.defaults.baseURL= 'http://localhost:8000/api/v1'
+axios.defaults.baseURL= 'http://backend.katetigama.xyz/api/v1'
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
 
 var vueModel1=new Vue({
@@ -847,7 +847,7 @@ var vueModel1=new Vue({
       token=localStorage.getItem('access_token');
          $.ajax({
             type: 'GET',
-            url: "http://localhost:8000/api/v1/get-details",
+            url: "http://backend.katetigama.xyz/api/v1/get-details",
             beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Bearer " +token);
             },

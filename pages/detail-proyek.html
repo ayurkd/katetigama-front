@@ -181,7 +181,7 @@
                   <span><b class="fa fa-bookmark"></b> Kategori : {{project.work_field}}</b></span>
                   <p>{{project.description}}</p>
                   <p>Owner Project :<a href="#" @click="showcontact(project.alumni_id)">{{project.owner}}</a></p>
-                  <img v-bind:src=" 'http://localhost:8000/img/project/' + project.photo">
+                  <img v-bind:src=" 'http://backend.katetigama.xyz/img/project/' + project.photo">
                   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -479,7 +479,7 @@ var vueModel=new Vue({
         token=localStorage.getItem('access_token');
          $.ajax({
             type: 'GET',
-            url: `http://localhost:8000/api/v1/project/${id}`,
+            url: `http://backend.katetigama.xyz/api/v1/project/${id}`,
             beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Bearer " +token);
             },
@@ -494,7 +494,7 @@ var vueModel=new Vue({
         $("#exampleModal").modal("show")
         $.ajax({
             type: 'GET',
-            url: `http://localhost:8000/api/v1/alumni/${alumni}`,
+            url: `http://backend.katetigama.xyz/api/v1/alumni/${alumni}`,
             beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Bearer " +token);
             },
@@ -516,7 +516,7 @@ var vueModel=new Vue({
     //   var id = getAllUrlParams().id;
     //   token=localStorage.getItem('access_token'); 
     //   this.tampilkanProyek();
-    //    $.get(`http://localhost:8000/api/v1/project/${id}`)
+    //    $.get(`http://backend.katetigama.xyz/api/v1/project/${id}`)
     //   .done(function(data){
     //     that.items = data
     // })}
@@ -590,7 +590,7 @@ var vueModel=new Vue({
  </script>
  <script>
 token=localStorage.getItem('access_token')
-axios.defaults.baseURL= 'http://localhost:8000/api/v1'
+axios.defaults.baseURL= 'http://backend.katetigama.xyz/api/v1'
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
 
 var vueModel1=new Vue({
@@ -609,7 +609,7 @@ var vueModel1=new Vue({
       token=localStorage.getItem('access_token');
          $.ajax({
             type: 'GET',
-            url: "http://localhost:8000/api/v1/get-details",
+            url: "http://backend.katetigama.xyz/api/v1/get-details",
             beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Bearer " +token);
             },
@@ -660,7 +660,7 @@ var vueModel=new Vue({
         token=localStorage.getItem('access_token');
          $.ajax({
             type: 'GET',
-            url: `http://localhost:8000/api/v1/project/participant/${id}`,
+            url: `http://backend.katetigama.xyz/api/v1/project/participant/${id}`,
             beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Bearer " +token);
             },

@@ -199,7 +199,7 @@
               <div class="tab-pane active" id="projects">
                 <div v-for="item in items.projects.data">
                   <table>
-                    <th>               <img v-bind:src=" 'http://localhost:8000/img/project/' + item.photo"></th> 
+                    <th>               <img v-bind:src=" 'http://backend.katetigama.xyz/img/project/' + item.photo"></th> 
                     <td>
                   <h3><a v-bind:href="'detail-proyek.html?id='+item.id">{{item.title}}</a> <span class="pull-right badge bg-blue">{{item.status}}</span></h3>
                   <span><b class="fa fa-clock-o"></b> Batas Pendaftaran : {{fecha.format(new Date(item.end_date), 'dddd, D MMMM YYYY')}} </span>
@@ -447,7 +447,7 @@ var vueModel=new Vue({
         }
       },
       page:1,
-      api:"http://localhost:8000/api/v1/project"
+      api:"http://backend.katetigama.xyz/api/v1/project"
 
     },
     methods:{ 
@@ -479,7 +479,7 @@ var vueModel=new Vue({
 
 <script>
 token=localStorage.getItem('access_token')
-axios.defaults.baseURL= 'http://localhost:8000/api/v1'
+axios.defaults.baseURL= 'http://backend.katetigama.xyz/api/v1'
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
 
 var vueModel1=new Vue({
@@ -498,7 +498,7 @@ var vueModel1=new Vue({
       token=localStorage.getItem('access_token');
          $.ajax({
             type: 'GET',
-            url: "http://localhost:8000/api/v1/get-details",
+            url: "http://backend.katetigama.xyz/api/v1/get-details",
             beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Bearer " +token);
             },

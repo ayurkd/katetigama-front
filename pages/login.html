@@ -32,8 +32,10 @@
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
-
+    
     <form action="list-proyek.html" method="post" id='login'>
+      <div v-if="error" style="color: red">{{error.message}}</div>
+
       <div class="form-group has-feedback">
         <input type="email" class="form-control" placeholder="Email" v-model="email" required>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -79,15 +81,17 @@
   });
 </script>
 <script>
-axios.defaults.baseURL = 'http://localhost:8000/api/v1'
+axios.defaults.baseURL = 'http://backend.katetigama.xyz/api/v1'
 var vueModel= new Vue({
   el: '#login',
   data:{
       email: '',
       password: '',
+      error: null,
     },
   methods: {
     login:function() {
+      this.error = null
       return new Promise((resolve, reject) => {
         axios.post('/auth/login', {
           email: this.email,
@@ -108,7 +112,8 @@ var vueModel= new Vue({
             // context.commit('addTodo', response.data)
           })
           .catch(error => {
-            console.log(error)
+            console.log(error.response.data.error)
+            this.error = error.response.data.error
             reject(error)
           })
 

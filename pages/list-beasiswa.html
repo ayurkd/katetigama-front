@@ -156,7 +156,7 @@ Licence URI: http://www.os-templates.com/template-terms
   methods:{
       tampilkanProyek:function(){
         var that = this
-        $.get("http://localhost:8000/api/v1/category/2")
+        $.get("http://backend.katetigama.xyz/api/v1/category/2")
           .done(function(data){
             that.items.articles = data.article
           });
@@ -182,7 +182,7 @@ Licence URI: http://www.os-templates.com/template-terms
   methods:{
       tampilkanProyek:function(){
         var that = this
-        $.get("http://localhost:8000/api/v1/article")
+        $.get("http://backend.katetigama.xyz/api/v1/article")
       .done(function(data){
         that.items = data
       });

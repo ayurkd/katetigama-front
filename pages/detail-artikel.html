@@ -89,7 +89,7 @@ Licence URI: http://www.os-templates.com/template-terms
         <b>Tanggal </b>: <span>{{article.created_at}}</span>
       </div>
 
-      <img v-bind:src=" 'http://localhost:8000/img/blog/' + article.featured_image">
+      <img v-bind:src=" 'http://backend.katetigama.xyz/img/blog/' + article.featured_image">
       <article v-html="article.content"></article>
       <!-- ################################################################################################ --> 
     </div>
@@ -158,7 +158,7 @@ Licence URI: http://www.os-templates.com/template-terms
     mounted:function () {
       var that=this
       var id = getAllUrlParams().id;
-      $.get(`http://localhost:8000/api/v1/article/${id}`)
+      $.get(`http://backend.katetigama.xyz/api/v1/article/${id}`)
       .done(function(data){
         that.article = data.article
       });
@@ -178,7 +178,7 @@ Licence URI: http://www.os-templates.com/template-terms
   methods:{
       tampilkanProyek:function(){
         var that = this
-        $.get("http://localhost:8000/api/v1/article")
+        $.get("http://backend.katetigama.xyz/api/v1/article")
       .done(function(data){
         that.items = data
       });

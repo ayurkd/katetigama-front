@@ -149,7 +149,7 @@ Licence URI: http://www.os-templates.com/template-terms
               <ul class="nospace linklist">
                 <li class="row" >
                   <div class="col-md-5 col-xs-5 col-lg-5">
-                    <img v-bind:src=" 'http://localhost:8000/img/blog/' + item.featured_image" class="pigure">
+                    <img v-bind:src=" 'http://backend.katetigama.xyz/img/blog/' + item.featured_image" class="pigure">
                   </div>
                   <div class="col-lg-7 col-md-7 col-xs-7 title">
                     <b><a v-bind:href="'pages/detail-artikel.html?id='+item.id">{{item.name}}</a></b>
@@ -174,7 +174,7 @@ Licence URI: http://www.os-templates.com/template-terms
               <div v-for="item in items.article.slice(0,5)">
                 <li class="row" >
                   <div class="col-md-5 col-xs-5 col-lg-5">
-                    <img v-bind:src=" 'http://localhost:8000/img/blog/' + item.featured_image" class="pigure">
+                    <img v-bind:src=" 'http://backend.katetigama.xyz/img/blog/' + item.featured_image" class="pigure">
                   </div>
                   <div class="col-lg-7 col-md-7 col-xs-7 title">
                     <b><a v-bind:href="'pages/detail-artikel.html?id='+item.id">{{item.name}}</a></b>
@@ -199,7 +199,7 @@ Licence URI: http://www.os-templates.com/template-terms
               <div v-for="item in items.article.slice(0,5)">
                 <li class="row" >
                   <div class="col-md-5 col-xs-5 col-lg-5">
-                    <img v-bind:src=" 'http://localhost:8000/img/blog/' + item.featured_image" class="pigure">
+                    <img v-bind:src=" 'http://backend.katetigama.xyz/img/blog/' + item.featured_image" class="pigure">
                   </div>
                   <div class="col-lg-7 col-md-7 col-xs-7 title">
                     <b><a v-bind:href="'pages/detail-artikel.html?id='+item.id">{{item.name}}</a></b>
@@ -281,7 +281,7 @@ Licence URI: http://www.os-templates.com/template-terms
   methods:{
       tampilkanProyek:function(){
         var that = this
-        $.get("http://localhost:8000/api/v1/category/1")
+        $.get("http://backend.katetigama.xyz/api/v1/category/1")
           .done(function(data){
             that.items.article = data.article
             that.items.category =data.category
@@ -306,7 +306,7 @@ Licence URI: http://www.os-templates.com/template-terms
   methods:{
       tampilkanProyek:function(){
         var that = this
-        $.get("http://localhost:8000/api/v1/category/2")
+        $.get("http://backend.katetigama.xyz/api/v1/category/2")
           .done(function(data){
             that.items.article = data.article
           });
@@ -330,7 +330,7 @@ Licence URI: http://www.os-templates.com/template-terms
   methods:{
       tampilkanProyek:function(){
         var that = this
-        $.get("http://localhost:8000/api/v1/category/3")
+        $.get("http://backend.katetigama.xyz/api/v1/category/3")
           .done(function(data){
             that.items.article = data.article
           });

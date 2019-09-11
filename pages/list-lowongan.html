@@ -167,14 +167,14 @@ Licence URI: http://www.os-templates.com/template-terms
   methods:{
       tampilkanProyek:function(){
         var that = this
-        $.get("http://localhost:8000/api/v1/category/1")
+        $.get("http://backend.katetigama.xyz/api/v1/category/1")
       .done(function(data){
         that.items.article = data.article
       });
     },
     detail(id){
       this.isViewingDetail=true;
-      $.get(`http://localhost:8000/api/v1/article/${id}`)
+      $.get(`http://backend.katetigama.xyz/api/v1/article/${id}`)
       .done(function(data)
       {
         $('#detail').html(data.article.body)
@@ -202,7 +202,7 @@ Licence URI: http://www.os-templates.com/template-terms
   methods:{
       tampilkanProyek:function(){
         var that = this
-        $.get("http://localhost:8000/api/v1/article")
+        $.get("http://backend.katetigama.xyz/api/v1/article")
       .done(function(data){
         that.items = data
       });

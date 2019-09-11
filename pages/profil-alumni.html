@@ -498,7 +498,7 @@
         var id = getAllUrlParams().id;
         $.ajax({
               type: 'GET',
-              url: `http://localhost:8000/api/v1/alumni/${id}`,
+              url: `http://backend.katetigama.xyz/api/v1/alumni/${id}`,
               beforeSend: function (xhr) {
               xhr.setRequestHeader ("Authorization", "Bearer " +token);
               },
@@ -594,7 +594,7 @@
         token=localStorage.getItem('access_token');
          $.ajax({
             type: 'GET',
-            url: "http://localhost:8000/api/v1/project_user",
+            url: "http://backend.katetigama.xyz/api/v1/project_user",
             beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Bearer " +token);
             },
@@ -609,7 +609,7 @@
         var that=this;
         $.ajax({
           type:'DELETE',
-          url:`http://localhost:8000/api/v1/project/${id}`,
+          url:`http://backend.katetigama.xyz/api/v1/project/${id}`,
           beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Bearer " +token);
           },
@@ -644,7 +644,7 @@ var vueModel1=new Vue({
       token=localStorage.getItem('access_token');
          $.ajax({
             type: 'GET',
-            url: "http://localhost:8000/api/v1/get-details",
+            url: "http://backend.katetigama.xyz/api/v1/get-details",
             beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Bearer " +token);
             },

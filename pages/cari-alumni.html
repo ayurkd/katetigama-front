@@ -333,7 +333,7 @@
       {data:'work_address'}],
       processing:true,
       serverSide:false,
-      "ajax": {url:"http://localhost:8000/api/v1/alumni_contact",dataSrc:"alumni", 
+      "ajax": {url:"http://backend.katetigama.xyz/api/v1/alumni_contact",dataSrc:"alumni", 
                 beforeSend: function (xhr) {
                 token=localStorage.getItem('access_token');
                 xhr.setRequestHeader ("Authorization", "Bearer " +token);
@@ -352,13 +352,13 @@
         $("#exampleModal").modal("show");
         $.ajax({
             type: 'GET',
-            url: `http://localhost:8000/api/v1/alumni/${data.id}`,
+            url: `http://backend.katetigama.xyz/api/v1/alumni/${data.id}`,
             beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Bearer " +token);
             },
             contentType: 'application/json',
             success: function(profile){
-        // $.get(`http://localhost:8000/api/v1/alumni/${data.id}`)
+        // $.get(`http://backend.katetigama.xyz/api/v1/alumni/${data.id}`)
         //   .done(function(profile)
         //     {
               $("#nama").html(profile.alumni.full_name);
@@ -374,7 +374,7 @@
       });
 
      $("#daftarprodi").select2();
-     $.get('http://localhost:8000/api/v1/search_company')
+     $.get('http://backend.katetigama.xyz/api/v1/search_company')
           .done(function(data)
             {
              var finalData = [];
@@ -417,7 +417,7 @@
 </script>
 <script>
 token=localStorage.getItem('access_token')
-axios.defaults.baseURL= 'http://localhost:8000/api/v1'
+axios.defaults.baseURL= 'http://backend.katetigama.xyz/api/v1'
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
 
 var vueModel1=new Vue({
@@ -436,7 +436,7 @@ var vueModel1=new Vue({
       token=localStorage.getItem('access_token');
          $.ajax({
             type: 'GET',
-            url: "http://localhost:8000/api/v1/get-details",
+            url: "http://backend.katetigama.xyz/api/v1/get-details",
             beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Bearer " +token);
             },

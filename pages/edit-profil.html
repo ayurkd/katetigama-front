@@ -581,7 +581,7 @@
                     var id = getAllUrlParams().id;
                     token = localStorage.getItem('access_token')
                     $.ajax({
-                        url: `http://localhost:8000/api/v1/alumni/${id}`,
+                        url: `http://backend.katetigama.xyz/api/v1/alumni/${id}`,
                         beforeSend: function(xhr) {
                             xhr.setRequestHeader("Authorization", "Bearer " + token);
                         },
@@ -618,7 +618,7 @@
                   var id=getAllUrlParams().id;
                   token=localStorage.getItem('access_token')
                   $.ajax({
-                  url: `http://localhost:8000/api/v1/alumni/${id}`,
+                  url: `http://backend.katetigama.xyz/api/v1/alumni/${id}`,
                   beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", "Bearer " +token);
                   },
@@ -707,7 +707,7 @@
 </script>
 <script>
       $( document ).ready( function() {
-                      var path = "http://localhost:8000/api/v1/search_company";
+                      var path = "http://backend.katetigama.xyz/api/v1/search_company";
                       $('input.typeahead').typeahead({
                       source:  function (query, process) {
                       return $.get(path, { query: query }, function (data) {
@@ -719,7 +719,7 @@
 </script>
 <script>
       $( document ).ready( function() {
-                      var path = "http://localhost:8000/api/v1/search_workField";
+                      var path = "http://backend.katetigama.xyz/api/v1/search_workField";
                       $('input.typeahead1').typeahead({
                       source:  function (query, process) {
                       return $.get(path, { query: query }, function (data) {
@@ -746,7 +746,7 @@ var vueModel1=new Vue({
       token=localStorage.getItem('access_token');
          $.ajax({
             type: 'GET',
-            url: "http://localhost:8000/api/v1/get-details",
+            url: "http://backend.katetigama.xyz/api/v1/get-details",
             beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Bearer " +token);
             },
