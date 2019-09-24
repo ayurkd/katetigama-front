@@ -375,8 +375,8 @@
                                       <div id="fields">
                                         <div class="controls"> 
                                             <div id="field1" class="form-group" style="margin-bottom: 5px">
-                                                <select class="select2 form-control" style="width: 50%;" name="alumni[]" id="alumni1" v-model="inputan.alumni_id" onchange="vueModel.getValue()"></select>
-                                                <button id="add1" onclick="addField()" class="btn btn-info add-more" type="button" style="">+</button>
+                                                <select class="select2 form-control alumni" style="width: 50%;" name="alumni_id[]" id="alumni1" v-model="inputan.alumni_id[0]" onchange="vueModel.getValue(0)"></select>
+                                                <button id="add1" @click="addField(inputan.alumni_id.length)" class="btn btn-info add-more" type="button" style="">+</button>
                                                 <button id="remove1" class="btn btn-danger remove-me" type="button" style="display: none;">-</button><br>
                                             </div>
                                         </div>
@@ -702,12 +702,12 @@
             el: "#proyek",
             data: {
                 inputan: {
-                    alumni_id: [],
+                    alumni_id: [null],
                 }
             },
             methods: {
-                getValue:function(){
-                    this.inputan.alumni_id=$("#alumni1").val()
+                getValue:function(index){
+                    this.inputan.alumni_id[index]=$("#alumni"+(index+1)).val()
                 },
                 editProyek:function(){
                   inputan=this.inputan;
@@ -717,6 +717,7 @@
                   url: `http://backend.katetigama.xyz/api/v1/project/ended/${id}`,
                   beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", "Bearer " +token);
+                  console.log(inputan);
                   },
                   contentType: 'application/json',
                   method: 'POST',
@@ -726,7 +727,7 @@
                   window.location="list-proyek.html"
                   }
                 })
-            }
+                }
           },
             mounted:function() {
               this.getValue()
@@ -888,21 +889,21 @@ var vueModel1=new Vue({
     }
 
     //dynamic form
-     var next = 1;
-      function addField() {
-            var addto = "#field" + next;
-            var addRemove = "#field" + (next);
-            next = next + 1;
-            var newIn = '<div id="field'+next+'" class="form-group" style="margin-bottom: 5px"><select class="select2 form-control" style="width: 50%; display: inline-block; margin-right: 3px;" name="alumni[]" id="alumni'+next+'" v-model="inputan.alumni_id'+'" onchange="vueModel.getValue()"></select><button id="add'+next+'" onclick="addField()" class="btn btn-info add-more" type="button" style="">+</button><button id="remove'+next+'" class="btn btn-danger remove-me" type="button" style="display: none;">-</button><br></div>';
+     // var index = 1;
+      function addField(index) {
+            var addto = "#field" + (index);
+            var addRemove = "#field" + (index);
+            index = index + 1;
+            var newIn = '<div id="field'+index+'" class="form-group" style="margin-bottom: 5px"><select class="select2 form-control" style="width: 50%; display: inline-block; margin-right: 3px;" name="alumni[]" id="alumni'+index+'" v-model="vueModel.inputan.alumni_id['+(index-1)+']'+'" onchange="vueModel.getValue('+(index-1)+')"></select><button id="add'+index+'" onclick="addField('+index+')" class="btn btn-info add-more" type="button" style="">+</button><button id="remove'+index+'" class="btn btn-danger remove-me" type="button" style="display: none;">-</button><br></div>';
             var newInput = $(newIn);
-            var removeBtn = '<br id="br'+ next +'">';
+            var removeBtn = '<br id="br'+ index +'">';
             var removeButton = $(removeBtn);
             $(addto).after(newInput);
             //$(addRemove).after(removeButton);
-            $('#add'+ (next-1) +'').attr('style', "display: none");
-            $('#remove'+ (next-1) +'').attr('style', "display: inline");
+            $('#add'+ (index-1) +'').attr('style', "display: none");
+            $('#remove'+ (index-1) +'').attr('style', "display: inline");
 
-            getAlumni($('#alumni' + next));   
+            getAlumni($('#alumni' + index));   
             
             $('.remove-me').click(function(e){
                 e.preventDefault();

@@ -244,6 +244,7 @@
                   <div v-for="(item, index) in items.project">
                       <button  class="pull-right"><a v-on:click="deleteProyek(item.id, index)">Hapus </a></button>
                      <button class="pull-right"><a v-bind:href="'edit-proyek.html?id='+item.id">Edit </a></button>
+                     <button class="pull-right"><a v-bind:href="'tambah-partisipan.html?id='+item.id">Update </a></button>
                       <strong href="#">{{item.title}}</strong>
                     <article>{{item.description}}</article>
                     <hr>
