@@ -111,9 +111,7 @@
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
+    
         </ul>
       </div>
     </nav>
@@ -225,8 +223,10 @@
               <!-- /.t   ab-pane -->
             </div>
             <!-- /.tab-content -->
-      <div id="participant" v-for="item in items.alumni">
+      <div id="participant"> 
+        <div v-for="item in items.alumni">
         <p>Partisipan Proyek : {{item.full_name}}</p>
+        </div>
       </div>
           </div>
 
@@ -235,22 +235,11 @@
       </div>
     </section>
   </div>
-      <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
-  </footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Create the tabs -->
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
+   
     <!-- Tab panes -->
     <div class="tab-content">
       <!-- Home tab content -->
@@ -654,7 +643,7 @@ var vueModel=new Vue({
       }
     },
     methods:{ 
-        tampilkanProyek:function(){
+        tampilkanPartisipan:function(){
         var that=this;
         var id = getAllUrlParams().id;
         token=localStorage.getItem('access_token');
@@ -673,7 +662,7 @@ var vueModel=new Vue({
      },
        mounted:function(){
         var that=this;
-        this.tampilkanProyek();
+        this.tampilkanPartisipan();
       }
     });
 

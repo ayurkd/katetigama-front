@@ -61,10 +61,10 @@
         <span class="sr-only">Toggle navigation</span>
       </a>
 
-      <div id="profile" class="navbar-custom-menu">
+      <div  class="navbar-custom-menu">
         <ul class="nav navbar-nav">
            <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
+          <li id="profile" class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">{{success.full_name}}</span>
@@ -78,13 +78,15 @@
                   {{success.full_name}}
                 </p>
               </li>
+              <!-- Menu Body -->
+              
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a v-bind:href="'profil-alumni.html?id='+success.alumni_id" class="btn btn-default btn-flat">Profile</a>
+                  <button class="btn btn-default btn-flat"><a  v-bind:href="'profil-alumni.html?id='+success.alumni_id">Edit Profil</a></button>
                 </div>
-                <div class="pull-right">
-                  <button @click.prevent="logout()" class="btn btn-default btn-flat">Sign out</a>
+                <div id="logout" class="pull-right">
+                  <button @click.prevent="logout()" class="btn btn-default btn-flat" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -499,6 +501,9 @@
 <script src="../bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
 <!-- AdminLTE for demo purposes -->
 <!-- Page script -->
 <script>
@@ -730,7 +735,11 @@
                     });
 </script>
 <script>
-var vueModel1=new Vue({
+token=localStorage.getItem('access_token')
+axios.defaults.baseURL= 'http://backend.katetigama.xyz/api/v1'
+axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
+
+var vueModel2=new Vue({
   el:"#profile",
   data:{
     success:{
@@ -755,7 +764,25 @@ var vueModel1=new Vue({
               that.success=data.success;
               console.log('Success'+data)
           }})
-    }
+    },
+    logout:function() {
+       return new Promise((resolve, reject) => {
+          axios.post('/auth/logout')
+            .then(response => {
+              localStorage.removeItem('access_token')
+              // context.commit('destroyToken')
+              resolve(response)
+              window.location='../index.html'
+              // console.log(response);
+              // context.commit('addTodo', response.data)
+            })
+            .catch(error => {
+              localStorage.removeItem('access_token')
+              // context.commit('destroyToken')
+              reject(error)
+            })
+        })
+      }
   },
   mounted:function(){
     var that=this;
