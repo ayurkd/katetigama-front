@@ -138,6 +138,13 @@
             </span>
           </a>
         </li>
+        <li>
+          <a href="visualisasi-alumni.html">
+            <i class="fa fa-envelope"></i> <span>Persebaran Alumni</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
                 </ul>
             </section>
             <!-- /.sidebar -->
@@ -219,7 +226,7 @@
 
                 <div class="form-group">
                   <label>Gambar Pendukung</label>
-                  <input type="file" required accept="image/*" id="inputan" v-model="inputan.photo" >
+                  <input type="file" required accept="image/*" id="inputan" >
 
                <div class="box-footer">
                 <button type="button" class="btn btn-primary" v-on:click ="editProyek()">Submit</button>
@@ -456,6 +463,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <!-- Page script -->
     <script>
         $(function() {
@@ -555,20 +563,34 @@
                   wadah.append("description", this.inputan.description);
                   wadah.append("start_date", this.inputan.start_date);
                   wadah.append("end_date", this.inputan.end_date);
+                  wadah.append('_method', 'PATCH')
                   token=localStorage.getItem('access_token');
+                    var id = getAllUrlParams().id;
                   $.ajax({
-                    url: 'http://backend.katetigama.xyz/api/v1/project',
+                    url: `http://backend.katetigama.xyz/api/v1/project/${id}`,
                     beforeSend: function (xhr) {
                     xhr.setRequestHeader ("Authorization", "Bearer " +token);
                     },
                     contentType: false,
-                    method: 'PATCH',
+                    method: 'POST',
                     processData: false,
                     data: wadah,
                     success: function(data){
                     console.log('succes: '+data);
+                    Swal.fire(
+                    'Good job!',
+                    'Proyek berhasil diedit',
+                    'success'
+                    )
                     window.location="list-proyek.html"
             },
+            error: function (xhr, ajaxOptions, thrownError) {
+            Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Semua form harus diisi!',
+            })
+          }
           })        
                 }
           },
@@ -647,7 +669,7 @@ token=localStorage.getItem('access_token')
 axios.defaults.baseURL= 'http://backend.katetigama.xyz/api/v1'
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
 
-var vueModel2=new Vue({
+var vueModel1=new Vue({
   el:"#profile",
   data:{
     success:{
@@ -697,7 +719,7 @@ var vueModel2=new Vue({
     that.tampilkanProfil()
   }
 
-})
+});
 </script>
 </body>
 
