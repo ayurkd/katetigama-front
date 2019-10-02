@@ -104,7 +104,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <button class="btn btn-default btn-flat"><a  v-bind:href="'profil-alumni.html?id='+success.alumni_id">Edit Profil</a></button>
+                  <a class="btn btn-default btn-flat" style="margin-top: 0px" v-bind:href="'profil-alumni.html?id='+success.alumni_id">Edit Profil</a>
                 </div>
                 <div id="logout" class="pull-right">
                   <button @click.prevent="logout()" class="btn btn-default btn-flat">Sign out</button>
@@ -206,7 +206,7 @@
                   <table>
                     <th>               <img v-bind:src=" 'http://backend.katetigama.xyz/img/blog/' + item.featured_image"></th>
                     <td>
-                  <h3><a v-bind:href="'detail-proyek.html?id='+item.id">{{item.name}}</a></h3>
+                  <h3><a >{{item.name}}</a></h3>
                   <span><b class="fa fa-clock-o"></b> Created at : {{fecha.format(new Date(item.created_at), 'dddd, D MMMM YYYY')}} </span>
                   <p v-html="item.content"></p>
                   </td>

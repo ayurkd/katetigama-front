@@ -81,7 +81,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a v-bind:href="'profil-alumni.html?id='+success.alumni_id" class="btn btn-default btn-flat">Edit Profil</a>
+                  <a class="btn btn-default btn-flat" style="margin-top: 0px" v-bind:href="'profil-alumni.html?id='+success.alumni_id">Edit Profil</a>
                 </div>
                 <div id="logout" class="pull-right">
                   <button @click.prevent="logout()" class="btn btn-default btn-flat">Sign out</a>
@@ -379,13 +379,18 @@
             data: wadah,
             success: function(data){
             console.log('succes: '+data);
-            Swal.fire(
-            'Good job!',
-            'Proyek berhasil ditambahkan',
-            'success'
-            )
-            window.location="list-proyek.html"
-            },
+            Swal.fire({
+                   type: 'success',
+                   title: 'Proyek berhasil ditambahkan',
+                   showConfirmButton: false,
+                   timer: 1500
+                  }
+                  );
+            setTimeout(function () {
+             window.location.href = "list-proyek.html"; //will redirect to your blog page (an ex: blog.html)
+             }, 2000); //will call the function after 2 secs.
+             },
+
             error: function (xhr, ajaxOptions, thrownError) {
             Swal.fire({
             type: 'error',

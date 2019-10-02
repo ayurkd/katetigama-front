@@ -8,7 +8,7 @@ Licence URI: http://www.os-templates.com/template-terms
 -->
 <html lang="">
 <head>
-<title>Daftar Beasiswa</title>
+<title>Lowongan Pekerjaan</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -81,20 +81,29 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <div class="wrapper row3">
   <main class="hoc container clear"> 
-      <!-- ################################################################################################ -->
-      <div id="articles" class="content three_quarter first"> 
-      <div v-for="item in items.articles.slice(0,5)">
-        <h6 class="heading"><a href="#">{{item.name}}</a></h6>
-        <p>{{item.description}}</p>
-        </div>
+    <!-- main body --> 
+    <!-- ################################################################################################ -->
+    <div id="articles" class="content three_quarter first">
 
+      <div v-if="isViewingDetail==false"> <!-- List -->
+        <div v-for="item in items.article">
+          <h6 class="heading"><a v-bind:href="'detail-artikel.html?id='+item.id" >{{item.name}}</a></h6>
+          <p>{{item.description}}</p>
+        </div>
+      </div>
+
+      <div v-else><!-- Detail -->
+        <h2 id="judul"></h2>
+        <div id="detail"></div>
+      </div>
 
       <button> Selanjutnya </button>
       <!-- ################################################################################################ --> 
     </div>
     <!-- ################################################################################################ --> 
     <!-- ################################################################################################ -->
-    <div id="list" class="sidebar one_quarter"> 
+      <!-- ################################################################################################ -->
+      <div id="list" class="sidebar one_quarter"> 
       <!-- ################################################################################################ -->
       <h6>Berita</h6>
       <nav class="sdb_holder" v-for="item in items.articles.data">
@@ -140,34 +149,45 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="../layout/scripts/jquery.min.js"></script>
 <script src="../layout/scripts/jquery.backtotop.js"></script>
 <script src="../layout/scripts/jquery.mobilemenu.js"></script>
-  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css"></link>
-  <script src="../js/main.js"></script>
-    <link href="../custom/style.css" rel="stylesheet" type="text/css" media="all">
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css"></link>
+<script src="../js/main.js"></script>
+<link href="../custom/style.css" rel="stylesheet" type="text/css" media="all">
 <script>
   var vueModel=new Vue({
     el:'#articles',
     data:{
       items:{
-        articles: []
-      }
+        article:[],
+      },
+
+      isViewingDetail : false
     },
 
   methods:{
       tampilkanProyek:function(){
         var that = this
         $.get("http://backend.katetigama.xyz/api/v1/category/2")
-          .done(function(data){
-            that.items.articles = data.article
-          });
-    } 
+      .done(function(data){
+        that.items.article = data.article
+      });
+    },
+    detail(id){
+      this.isViewingDetail=true;
+      $.get(`http://backend.katetigama.xyz/api/v1/article/${id}`)
+      .done(function(data)
+      {
+        $('#detail').html(data.article.body)
+        $('#judul').html(data.article.title)
+      })
+
+    }
 
   },
   mounted : function () {
     this.tampilkanProyek();
   }
 })  </script>
-</script>
 <script>
   var vueModel2=new Vue({
     el:'#list',
@@ -193,6 +213,5 @@ Licence URI: http://www.os-templates.com/template-terms
     this.tampilkanProyek();
   }
 })  </script>
-
 </body>
 </html>

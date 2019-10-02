@@ -249,11 +249,11 @@
                 </div>
                 <div class="form-group">
                 <label>Bidang Kerja</label>
-                <input type="text" class="typeahead1 form-control" v-model="inputan.job_detail.work_field">
+                <input id="workfield" type="text" class="typeahead1 form-control" v-model="inputan.job_detail.work_field" onchange="vueModel.getValue1()">
                 </div>
                 <div class="form-group">
                 <label>Instansi</label>
-                <input type="text" class="typeahead form-control" v-model="inputan.job_detail.company">
+                <input id ="instansi" type="text" class="typeahead form-control" v-model="inputan.job_detail.company" onchange="vueModel.getValue2()">
                 </div>
                 <div class="form-group">
                 <label>Jabatan</label>
@@ -502,7 +502,7 @@
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 <!-- AdminLTE for demo purposes -->
 <!-- Page script -->
@@ -581,6 +581,12 @@
                 getValue:function(){
                     this.inputan.date_of_birth=$("#datepicker").val()
                   },
+                getValue1:function(){
+                    this.inputan.job_detail.work_field=$("#workfield").val()
+                  },
+                getValue2:function(){
+                    this.inputan.job_detail.company=$("#instansi").val()
+                  },
                 dapatkanProyek: function() {
                     var that=this;
                     var id = getAllUrlParams().id;
@@ -632,7 +638,16 @@
                   data: JSON.stringify(inputan),
                   success: function(data){
                   console.log('succes: '+data);
-                  window.location="list-proyek.html"
+                  Swal.fire({
+                   type: 'success',
+                   title: 'Your work has been saved',
+                   showConfirmButton: false,
+                   timer: 1500
+                  }
+                  );
+                  setTimeout(function () {
+                   window.location.href = "list-proyek.html"; //will redirect to your blog page (an ex: blog.html)
+                  }, 2000); //will call the function after 2 secs.
                   }
                 })
             }
